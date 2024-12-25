@@ -1,19 +1,11 @@
-
-import './App.css'
-import './index.css'
+import "./App.css";
+import "./index.css";
+import Navbar from "./components/Navbar";
 
 function App() {
-  
-  return (
-    <>
-      <div className=''>
-        <h1>hello</h1>
-        <div>
-          <h3 className='text-5xl'>Happy Birthday Yashhu Bhai</h3>
-        </div>
-        </div>  
-    </>
-  )
+  return <>
+  <Navbar></Navbar>
+  </>;
 }
 
-export default App
+export default App;
