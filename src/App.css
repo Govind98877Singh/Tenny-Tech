@@ -1,0 +1,13 @@
+/* app.css */
+
+::-webkit-media-controls-current-time-display {
+    display: none !important;
+  }
+  
+  ::-webkit-media-controls-timeline {
+    display: none !important;
+  }
+  /* Apply globally to the entire website */
+
+  
+  
