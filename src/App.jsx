@@ -1,12 +1,10 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-// import OurSevices from "./components/OurServices";
-import FooterCom from "./components/FooterCom";
-
 import Video from "./components/Video";
 import HeroSection from "./components/HeroSection";
 import StatsSection from "./components/StateSection";
 import ParagraphWithImage from "./components/ParagraphWithImage";
+import FooterCom from "./components/FooterCom";
 function App() {
   return (
     <div className="flex flex-col">
@@ -20,7 +18,7 @@ function App() {
       <HeroSection></HeroSection>
       <ParagraphWithImage/>
       <StatsSection/>
-    
+     <FooterCom />
     </div>
   );
 
