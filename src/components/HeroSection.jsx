@@ -30,10 +30,7 @@ function HeroSection() {
   return (
     <div className="flex flex-col md:flex-row items-center bg-gray-50 min-h-screen px-8">
       {/* Text Section */}
-      <div
-        className="text-left md:w-1/2 space-y-4"
-        ref={textContainerRef}
-      >
+      <div className="text-left md:w-1/2 space-y-4" ref={textContainerRef}>
         <h1 className="text-4xl md:text-6xl font-bold text-[#152338] leading-snug">
           Where
         </h1>
@@ -67,8 +64,3 @@ function HeroSection() {
 }
 
 export default HeroSection;
-
-
-
-
-

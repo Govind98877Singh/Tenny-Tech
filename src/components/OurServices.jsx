@@ -7,10 +7,10 @@ function OurSevices() {
   return (
     <>
       <div>
-      <ServiceAI />
-      <ServiceSalesforce />
-      <ServiceDigital />
-      <ServiceIT />
+        <ServiceAI />
+        <ServiceSalesforce />
+        <ServiceDigital />
+        <ServiceIT />
       </div>
     </>
   );

@@ -63,7 +63,7 @@ function StatsSection() {
 
       {/* Stats Section */}
       <div className="flex flex-wrap justify-center items-center space-x-8">
-        {[ 
+        {[
           { number: "5+", label: "Years of Experience" },
           { number: "80%", label: "Increase in Efficiency" },
           { number: "90%", label: "Client Satisfaction Rate" },
@@ -84,7 +84,3 @@ function StatsSection() {
 }
 
 export default StatsSection;
-
-
-
-

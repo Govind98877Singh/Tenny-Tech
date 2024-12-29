@@ -1,7 +1,6 @@
 function Navbar() {
   return (
     <nav className="bg-[#B2C6E2] text-white shadow-lg flex">
-
       {/* Sidebar Placeholder */}
       <div className="hidden md:block ml-16">
         <div className="flex justify-center items-center h-full">
@@ -16,7 +15,6 @@ function Navbar() {
       {/* Main Navigation */}
       <div className="w-full md:w-11/12 mr-32">
         <div className="container mx-auto px-4 flex items-center justify-between py-2">
-
           {/* Navigation Box for Desktop */}
           <div className="bg-slate-300 px-4 py-2 rounded-lg shadow-md hidden md:flex items-center space-x-16">
             <a
@@ -87,7 +85,6 @@ function Navbar() {
           </ul>
         </div>
       </div>
-
     </nav>
   );
 }

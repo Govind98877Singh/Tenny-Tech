@@ -31,7 +31,7 @@ function ServiceAI() {
         </p>
         <a
           href="#"
-          className="text-blue-500 text-2xl font-semibold hover:underline flex items-center mt-16" 
+          className="text-blue-500 text-2xl font-semibold hover:underline flex items-center mt-16"
         >
           <span className="mr-2">Learn More</span>
           <span>➤</span>

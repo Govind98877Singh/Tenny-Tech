@@ -11,16 +11,14 @@ function App() {
       {/* Navbar Section */}
       <Navbar />
 
-
       {/* Video Section */}
       <Video />
 
       <HeroSection></HeroSection>
-      <ParagraphWithImage/>
-      <StatsSection/>
-     <FooterCom />
+      <ParagraphWithImage />
+      <StatsSection />
+      <FooterCom />
     </div>
   );
-
 }
 export default App;
