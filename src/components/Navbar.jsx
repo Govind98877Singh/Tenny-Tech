@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <nav className="bg-[#B2C6E2] text-white shadow-lg flex">
+    <nav className="bg-[#B2C6E2] text-white shadow-lg flex fixed top-0 left-0 w-full z-50">
       {/* Sidebar Placeholder */}
       <div className="hidden md:block ml-16">
         <div className="flex justify-center items-center h-full">
@@ -57,7 +57,7 @@ function Navbar() {
 
           {/* Login Button */}
           <button className="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-[#D5DEF5] transition duration-300 ease-in-out hover:text-blue-500">
-            Log in
+            Log In
           </button>
         </div>
 

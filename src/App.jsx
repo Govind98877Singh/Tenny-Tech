@@ -5,6 +5,9 @@ import HeroSection from "./components/HeroSection";
 import StatsSection from "./components/StateSection";
 import ParagraphWithImage from "./components/ParagraphWithImage";
 import FooterCom from "./components/FooterCom";
+import AboutUs from "./components/AboutUs";
+import BookAservice from "./components/BookAservice";
+
 function App() {
   return (
     <div className="flex flex-col">
@@ -12,11 +15,13 @@ function App() {
       <Navbar />
 
       {/* Video Section */}
-      <Video />
+      {/* <Video />
 
       <HeroSection></HeroSection>
       <ParagraphWithImage />
-      <StatsSection />
+      <StatsSection /> */}
+      {/* <AboutUs /> */}
+      <BookAservice />
       <FooterCom />
     </div>
   );
