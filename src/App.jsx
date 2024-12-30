@@ -7,6 +7,8 @@ import ParagraphWithImage from "./components/ParagraphWithImage";
 import FooterCom from "./components/FooterCom";
 import AboutUs from "./components/AboutUs";
 import BookAservice from "./components/BookAservice";
+import ToBookService from "./components/ToBookService";
+import ConfirmBooking from "./components/ConfirmBooking";
 
 function App() {
   return (
@@ -21,7 +23,9 @@ function App() {
       <ParagraphWithImage />
       <StatsSection /> */}
       {/* <AboutUs /> */}
-      <BookAservice />
+      {/* <BookAservice /> */}
+       {/* <ToBookService /> */}
+       <ConfirmBooking />
       <FooterCom />
     </div>
   );

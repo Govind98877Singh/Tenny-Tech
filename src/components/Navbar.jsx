@@ -2,11 +2,11 @@ function Navbar() {
   return (
     <nav className="bg-[#B2C6E2] text-white shadow-lg flex fixed top-0 left-0 w-full z-50">
       {/* Sidebar Placeholder */}
-      <div className="hidden md:block ml-16">
+      <div className="hidden md:block ml-6">
         <div className="flex justify-center items-center h-full">
           <img
             src="Images/base_logo_transparent_background.png"
-            alt="Logo"
+            alt="Logo"  
             className="h-16 w-auto"
           />
         </div>
