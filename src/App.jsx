@@ -9,6 +9,9 @@ import AboutUs from "./components/AboutUs";
 import BookAservice from "./components/BookAservice";
 import ToBookService from "./components/ToBookService";
 import ConfirmBooking from "./components/ConfirmBooking";
+import NewsletterForm from "./components/NewsLetterForm";
+import ContactForm from "./components/ContactForm";
+import Services from "./components/Services";
 
 function App() {
   return (
@@ -25,7 +28,11 @@ function App() {
       {/* <AboutUs /> */}
       {/* <BookAservice /> */}
        {/* <ToBookService /> */}
-       <ConfirmBooking />
+       {/* <ConfirmBooking />
+      <StatsSection />
+         {/* <Services/> */}
+      {/* <NewsletterForm/>
+      <ContactForm/> */}
       <FooterCom />
     </div>
   );
