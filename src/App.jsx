@@ -12,6 +12,7 @@ import ConfirmBooking from "./components/ConfirmBooking";
 import NewsletterForm from "./components/NewsLetterForm";
 import ContactForm from "./components/ContactForm";
 import Services from "./components/Services";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   return (
@@ -28,12 +29,13 @@ function App() {
       {/* <AboutUs /> */}
       {/* <BookAservice /> */}
        {/* <ToBookService /> */}
-       {/* <ConfirmBooking />
-      <StatsSection />
+        <ConfirmBooking />
+      {/* <StatsSection /> */}
          {/* <Services/> */}
       {/* <NewsletterForm/>
       <ContactForm/> */}
       <FooterCom />
+      {/* <LandingPage/> */}
     </div>
   );
 }

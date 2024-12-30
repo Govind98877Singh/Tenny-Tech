@@ -23,7 +23,7 @@ function ToBookService({data}) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 justify-center mt-10">
       {/* Back Button */}
       <div className="w-full max-w-4xl mb-4">
         <button className="text-blue-600 font-medium hover:underline flex items-center">
