@@ -15,7 +15,7 @@ const data = [
   },
   {
     id: 3,
-    image: "Images/Design Thinking 1.webp",
+    image: "Images/DesignThinking1.webp",
     service: "Design Thinking",
     time: "1 Hr",
     price: "₹1500",

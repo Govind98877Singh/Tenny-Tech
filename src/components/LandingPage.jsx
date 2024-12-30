@@ -18,8 +18,9 @@ const LandingPage = () => {
       <Video/>
       <HeroSection/>
       <ParagraphWithImage/>
-     <MainCardSection/>
       <StatsSection></StatsSection>
+      <MainCardSection/>
+    
       <NewsletterForm></NewsletterForm>
       <Services></Services>
       <ContactForm></ContactForm>
