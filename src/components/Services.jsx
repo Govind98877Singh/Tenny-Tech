@@ -1,7 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import servicesData from '../ServiceData';
-
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -34,4 +34,5 @@ const Services = () => {
 };
 
 export default Services;
+
 
