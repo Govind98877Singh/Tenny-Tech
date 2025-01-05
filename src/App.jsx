@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="flex flex-col">
       {/* Navbar Section */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Video Section */}
       {/* <Video />
@@ -29,13 +29,14 @@ function App() {
       {/* <AboutUs /> */}
       {/* <BookAservice /> */}
        {/* <ToBookService /> */}
-        <ConfirmBooking />
+        {/* <ConfirmBooking /> */}
       {/* <StatsSection /> */}
          {/* <Services/> */}
       {/* <NewsletterForm/>
       <ContactForm/> */}
-      <FooterCom />
-      {/* <LandingPage/> */}
+      {/* <FooterCom /> */}
+      <LandingPage/>
+      
     </div>
   );
 }
