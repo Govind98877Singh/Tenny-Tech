@@ -3,7 +3,7 @@ import React from "react";
 function ConfirmBooking() {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-center py-10 mt-10">
-      <div className="w-[70rem] bg-white rounded-lg shadow-lg p-6">
+      <div className="w-[80rem] h-[40rem] bg-white rounded-lg shadow-lg p-6 pt-14">
         {/* Back Button */}
         <div className="mb-4">
           <button className="text-blue-600 font-medium hover:underline flex items-center">
@@ -24,7 +24,7 @@ function ConfirmBooking() {
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row ">
           {/* Client Details Form */}
           <div className="flex-grow pr-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6">
