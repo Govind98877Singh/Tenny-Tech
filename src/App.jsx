@@ -20,29 +20,56 @@ import DesignThinkingDescription from "./components/DesignThinkingDescription";
 import SignUp from "./components/SignUp";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-
-
+import OurSevices from "./components/OurServices";
+import TermsAndConditions from "./components/Termsandconditions";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import CancellationPolicy from "./components/CancellationPolicy";
 
 function App() {
   return (
     <Router>
       <ScrollToTop /> {/* Scroll reset on route change */}
-      
       <div id="root" className="flex flex-col min-h-screen">
         <Navbar /> {/* Navbar will appear on all pages */}
-        
         <div className="main-content flex-grow">
           <Routes>
             {/* Main landing page */}
             <Route path="*" element={<LandingPage />} />
-            
+
             {/* Service description pages */}
-            <Route path="/salesforce-cloud" element={<SalesforceDescription />} />
+            <Route
+              path="/salesforce-cloud"
+              element={<SalesforceDescription />}
+            />
             <Route path="/ai" element={<Aidescription />} />
-            <Route path="/design-thinking" element={<DesignThinkingDescription />} />
+            <Route
+              path="/design-thinking"
+              element={<DesignThinkingDescription />}
+            />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/Home-page" element={<LandingPage />} />
+            <Route path="/book-a-service" element={<BookAservice />} />
+            <Route path="/ai" element={<Aidescription />} />
+            <Route
+              path="/salesforce-cloud"
+              element={<SalesforceDescription />}
+            />
+            <Route
+              path="/design-thinking"
+              element={<DesignThinkingDescription />}
+            />
+            <Route
+              path="/terms-and-conditions"
+              element={<TermsAndConditions />}
+            />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route
+              path="/cancellation-policy"
+              element={<CancellationPolicy />}
+            />
           </Routes>
         </div>
-
         <FooterCom /> {/* Footer will always be at the bottom */}
       </div>
     </Router>
