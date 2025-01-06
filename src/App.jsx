@@ -24,10 +24,15 @@ import OurSevices from "./components/OurServices";
 import TermsAndConditions from "./components/Termsandconditions";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import CancellationPolicy from "./components/CancellationPolicy";
+import SignUpWithEmail from "./components/SignUpWithEmail";
+import LogIn from "./components/Login";
 
 function App() {
   return (
     <Router>
+      {/* <LogIn/> */}
+      {/* <SignUpWithEmail /> */}
+      {/* <SignUp /> */}
       <ScrollToTop /> {/* Scroll reset on route change */}
       <div id="root" className="flex flex-col min-h-screen">
         <Navbar /> {/* Navbar will appear on all pages */}
@@ -51,6 +56,7 @@ function App() {
             <Route path="/Home-page" element={<LandingPage />} />
             <Route path="/book-a-service" element={<BookAservice />} />
             <Route path="/ai" element={<Aidescription />} />
+            <Route path="/signup" element={<SignUp />} />    {/* Route for SignUp page */}
             <Route
               path="/salesforce-cloud"
               element={<SalesforceDescription />}
@@ -68,6 +74,12 @@ function App() {
               path="/cancellation-policy"
               element={<CancellationPolicy />}
             />
+            <Route path="/login" element={<LogIn />} />  {/* Default route for LogIn */}
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signup/email" element={<SignUpWithEmail />} /> 
+             {/* Route for SignUp
+     
+            {/* <Route path="/signup" element={<SignUpWithEmail />} /> */}
           </Routes>
         </div>
         <FooterCom /> {/* Footer will always be at the bottom */}
