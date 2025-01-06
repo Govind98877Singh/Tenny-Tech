@@ -13,43 +13,61 @@ function ToBookService() {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [availableTimes, setAvailableTimes] = useState([
-    "10:00 am", "11:15 am", "12:30 pm", "1:45 pm", "3:00 pm", "4:15 pm"
+    "10:00 am",
+    "11:15 am",
+    "12:30 pm",
+    "1:45 pm",
+    "3:00 pm",
+    "4:15 pm",
   ]);
 
   // Get the current date and time
   const today = new Date();
   const currentTime = today.getHours() * 60 + today.getMinutes(); // Current time in minutes
 
-  // Function to get days of the month
-  const daysInMonth = getDaysInMonth(currentYear, currentMonth + 1);
-  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+  // Adjust month and year navigation
+  const handleMonthChange = (direction) => {
+    if (direction === "prev") {
+      if (currentMonth === 0) {
+        setCurrentMonth(11);
+        setCurrentYear(currentYear - 1);
+      } else {
+        setCurrentMonth(currentMonth - 1);
+      }
+    } else {
+      if (currentMonth === 11) {
+        setCurrentMonth(0);
+        setCurrentYear(currentYear + 1);
+      } else {
+        setCurrentMonth(currentMonth + 1);
+      }
+    }
+  };
 
   // Function to check if a date is in the past
   const isPastDate = (day) => {
     return (
       currentYear < today.getFullYear() ||
-      (currentYear === today.getFullYear() && currentMonth < today.getMonth()) ||
-      (currentYear === today.getFullYear() && currentMonth === today.getMonth() && day < today.getDate())
+      (currentYear === today.getFullYear() &&
+        currentMonth < today.getMonth()) ||
+      (currentYear === today.getFullYear() &&
+        currentMonth === today.getMonth() &&
+        day < today.getDate())
     );
   };
 
   // Function to check if a time slot has passed
   const isPastTime = (time) => {
-    const [hour, minute] = time.split(":");
-    const [timeHour, timeMinute] = minute.split(" ");
-    let hourIn24 = parseInt(hour);
-    if (timeMinute === "pm" && hourIn24 !== 12) hourIn24 += 12;
-    if (timeMinute === "am" && hourIn24 === 12) hourIn24 = 0;
-    const timeInMinutes = hourIn24 * 60 + parseInt(timeMinute.split(" ")[0]);
+    const [hour, minutePart] = time.split(":");
+    const [minute, period] = minutePart.split(" ");
+    let hourIn24 = parseInt(hour, 10);
+    const minuteInNum = parseInt(minute, 10);
+    if (period === "pm" && hourIn24 !== 12) hourIn24 += 12;
+    if (period === "am" && hourIn24 === 12) hourIn24 = 0;
+    const timeInMinutes = hourIn24 * 60 + minuteInNum;
 
-    return timeInMinutes < currentTime;
+    return timeInMinutes <= currentTime;
   };
-
-  // Filter time slots to remove the ones that have passed
-  useEffect(() => {
-    const updatedTimes = availableTimes.filter(time => !isPastTime(time));
-    setAvailableTimes(updatedTimes);
-  }, [availableTimes, currentTime]);
 
   // Handle selecting a date
   const handleDateClick = (day) => {
@@ -76,9 +94,12 @@ function ToBookService() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 justify-center mt-10">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 justify-center mt-16">
       <div className="w-full max-w-4xl mb-4">
-        <button className="text-blue-600 font-medium hover:underline flex items-center">
+        <button
+          onClick={() => navigate("/book-a-service")}
+          className="text-blue-600 font-medium hover:underline flex items-center"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 mr-1"
@@ -101,7 +122,8 @@ function ToBookService() {
             AI Consultancy - 1 hour
           </h2>
           <p className="text-center text-sm text-gray-600 mt-1">
-            Check out our availability and book the date and time that works for you
+            Check out our availability and book the date and time that works for
+            you
           </p>
         </div>
 
@@ -119,16 +141,20 @@ function ToBookService() {
             <div className="bg-white rounded-lg shadow-md p-4">
               <div className="flex justify-between items-center mb-4">
                 <button
-                  onClick={() => setCurrentMonth(currentMonth - 1)}
+                  onClick={() => handleMonthChange("prev")}
                   className="text-gray-500 hover:text-blue-600"
                 >
                   &lt;
                 </button>
                 <span className="text-sm font-medium text-gray-800">
-                  {new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} {currentYear}
+                  {new Date(currentYear, currentMonth).toLocaleString(
+                    "default",
+                    { month: "long" }
+                  )}{" "}
+                  {currentYear}
                 </span>
                 <button
-                  onClick={() => setCurrentMonth(currentMonth + 1)}
+                  onClick={() => handleMonthChange("next")}
                   className="text-gray-500 hover:text-blue-600"
                 >
                   &gt;
@@ -136,12 +162,14 @@ function ToBookService() {
               </div>
 
               <div className="grid grid-cols-7 text-center text-sm">
-                {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-                  <div key={day} className="font-medium text-gray-600">
-                    {day}
-                  </div>
-                ))}
-                {days.map((day) => (
+                {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
+                  (day) => (
+                    <div key={day} className="font-medium text-gray-600">
+                      {day}
+                    </div>
+                  )
+                )}
+                {Array.from({ length: getDaysInMonth(currentYear, currentMonth + 1) }, (_, i) => i + 1).map((day) => (
                   <button
                     key={day}
                     onClick={() => handleDateClick(day)}

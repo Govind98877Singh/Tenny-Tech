@@ -9,7 +9,7 @@ function AboutUs() {
             className=" h-[39rem] my-36 ml-[-3rem]"
           />
         </div>
-        <div className="w-[60rem] mt-36 text-xl space-y-6">
+        <div className="w-[60rem] mt-36 text-xl space-y-6 mb-4">
           <p>
             At Teeny Tech Trek, we are passionate about leveraging technology to
             drive innovation and empower businesses in the digital age. Founded

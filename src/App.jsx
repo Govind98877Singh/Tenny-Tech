@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import FooterCom from "./components/FooterCom";
 import ScrollToTop from "./components/ScrollToTop";
@@ -15,15 +16,15 @@ import DesignThinkingDescription from "./components/DesignThinkingDescription";
 import TermsAndConditions from "./components/Termsandconditions";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import CancellationPolicy from "./components/CancellationPolicy";
-import Blog from "./components/Blog";  {/* Import the Blog component */}
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Blog from "./components/Blog";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   return (
     <Router>
-      <ScrollToTop /> {/* Scroll reset on route change */}
+      <ScrollToTop /> {/* Scrolls to the top on route change */}
       <div id="root" className="flex flex-col min-h-screen">
-        <Navbar /> {/* Navbar will appear on all pages */}
+        <Navbar /> {/* Navbar appears on all pages */}
         <div className="main-content flex-grow">
           <Routes>
             {/* Main landing page */}
@@ -37,26 +38,27 @@ function App() {
             {/* Pages for user actions */}
             <Route path="/signup" element={<SignUp />} />
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/book-a-service" element={<BookAservice />} />
             <Route path="/confirm-booking" element={<ConfirmBooking />} />
             <Route path="/book-service" element={<ToBookService />} />
+
+            {/* Blog Page */}
+            <Route path="/blog" element={<Blog />} />
+
+            {/* Contact Page */}
+            <Route path="/contact-form" element={<ContactForm />} />
 
             {/* Terms and Policies */}
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cancellation-policy" element={<CancellationPolicy />} />
 
-            {/* Blog Page */}
-            <Route path="/blog" element={<Blog />} /> {/* New route for Blog */}
-
-            {/* Services */}
-            <Route path="/services" element={<Services />} />
-
-            {/* Catch-all route for any undefined paths */}
-            <Route path="*" element={<LandingPage />} /> {/* Default fallback */}
+            {/* Catch-all route for undefined paths */}
+            <Route path="*" element={<LandingPage />} />
           </Routes>
         </div>
-        <FooterCom /> {/* Footer will always be at the bottom */}
+        <FooterCom /> {/* Footer appears on all pages */}
       </div>
     </Router>
   );

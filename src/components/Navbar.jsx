@@ -40,12 +40,12 @@ function Navbar() {
                 Our Service
               </button>
               {showDropdown && (
-                <div className="absolute top-full left-0 bg-white shadow-lg rounded-md mt-2">
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-md mt-2 w-full">
                   <ul className="py-2">
                     <li>
                       <Link
                         to="/ai"
-                        className="block px-6 py-2 text-slate-700 hover:bg-[#D5DEF5] transition duration-300 ease-in-out hover:text-blue-500"
+                        className="block px-6 py-2 text-slate-700 hover:bg-[#D5DEF5] transition duration-300 ease-in-out hover:text-blue-500 "
                       >
                         Artificial Intelligence
                       </Link>
@@ -90,12 +90,12 @@ function Navbar() {
             >
               Blog
             </Link>
-            <a
-              href="#reviews"
+            <Link
+              to="/ContactForm"
               className="text-slate-700 px-6 py-2 hover:bg-[#D5DEF5] transition duration-300 ease-in-out hover:text-blue-500"
             >
-              Reviews
-            </a>
+              Contact Us
+            </Link>
           </div>
 
           {/* Login Button */}

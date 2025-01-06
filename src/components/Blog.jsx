@@ -21,7 +21,7 @@ function Blog() {
         </div>
 
         {/* Post Details Section */}
-        <div className="bg-[#007ea7] text-white p-4 flex  flex-col justify-center items-center h-56">
+        <div className="bg-[#3a6ea5] text-white p-4 flex  flex-col justify-center items-center h-56">
           {/* Top Row */}
           <div className="flex justify-between items-center mb-4 mt-[-5rem]">
             <p className="text-sm">
@@ -42,7 +42,7 @@ function Blog() {
         </div>
 
         {/* Footer Section */}
-        <div className="bg-[#007ea7] border-t border-white  text-white p-4 flex justify-between items-center ">
+        <div className="bg-[#3a6ea5] border-t border-white  text-white p-4 flex justify-between items-center ">
           <div className="flex space-x-4 ">
             <span className="text-sm">5 views</span>
             <span className="text-sm">0 comments</span>
