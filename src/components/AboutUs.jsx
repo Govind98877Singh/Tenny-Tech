@@ -56,9 +56,9 @@ function AboutUs() {
           </p>
         </div>
       </div>
-      <div className="flex gap-40 absolute bottom-20 left-40">
-        <button className="border px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 text-white">Terms & Conditions</button>
-        <button className="border px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 text-white">Privacy Policy</button>
+      <div className="flex gap-40 absolute bottom-[-8rem] left-16">
+        <button className="border px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 text-white min-w-44">Terms & Conditions</button>
+        <button className="border px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 text-white min-w-44">Privacy Policy</button>
       </div>
     </div>
   );

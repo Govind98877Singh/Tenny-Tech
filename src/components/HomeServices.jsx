@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import Card from './Card';
-import servicesData from '../ServiceData';
-
+import React from "react";
+import { Link } from "react-router-dom"; // Import Link from React Router
+import Card from "./Card"; // Import Card Component
+import servicesData from "../ServiceData"; // Import services data
 
 const HomeServices = () => {
-  const [services, setServices] = useState([]);
-
-  // Simulating data fetching
-  useEffect(() => {
-    setServices(servicesData); // In real-world apps, data can come from APIs
-  }, []);
-
   return (
     <div className="bg-blue-200 min-h-screen flex flex-col items-center justify-center px-4 py-16 space-y-16">
       {/* Cards Section */}
       <div className="flex justify-center gap-16 flex-wrap">
-        {services.map((service) => (
-          <Card key={service.id} title={service.title} iconPath={service.iconPath} link={service.link} />
+        {servicesData.map((service) => (
+          <Card
+            key={service.id}
+            title={service.title}
+            iconPath={service.iconPath}
+            link={service.link}
+          />
         ))}
       </div>
 
@@ -34,4 +32,5 @@ const HomeServices = () => {
 };
 
 export default HomeServices;
+
 

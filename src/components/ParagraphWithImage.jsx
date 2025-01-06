@@ -27,12 +27,9 @@ function ParagraphWithImage() {
   }, []);
 
   return (
-    <div
-      ref={sectionRef}
-      className="flex flex-col md:flex-row items-center py-16 px-8 bg-gray-50" // Matches the light background
-    >
-      {/* Left Text Section */}
-      <div className="md:w-1/2 space-y-6">
+    <div ref={sectionRef} className="py-16 px-8 bg-gray-50">
+      {/* Left Text Section (Paragraph) */}
+      <div className="space-y-6 mb-8">
         <h1 className="text-4xl font-bold text-gray-800">
           Empower Your Business with Innovation
         </h1>
@@ -49,15 +46,27 @@ function ParagraphWithImage() {
         </p>
       </div>
 
-      {/* Right Image Section */}
-      <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-        <div className="w-full h-64 bg-gray-200 rounded-lg shadow-md">
-          {/* Placeholder for Image */}
-          <p className="text-center text-gray-500 mt-28">Add your image here</p>
+      {/* Blue Container with Text and Image (Parallel with Paragraph)
+      <div className="bg-blue-600 text-white p-6 rounded-lg flex items-center justify-between mb-8">
+        {/* Left side Text */}
+        {/* <div className="text-lg font-semibold w-3/5">
+          <p>Artificial Intelligence (AI)</p>
+          <p>Salesforce Cloud</p>
+          <p>Design Thinking</p>
+          <p>Web Development</p>
+          <p>IT Development</p>
+        </div> */}
+
+        {/* Right side Image */}
+        {/* <div className="w-2/5 flex justify-center items-center">
+          <img src="ai4.png" alt="AI" className="w-24 h-24 object-cover rounded-full" />
         </div>
-      </div>
+      </div> */} 
     </div>
   );
 }
 
 export default ParagraphWithImage;
+
+
+

@@ -1,30 +1,82 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-function ToBookService({data}) {
-  const [selectedDate, setSelectedDate] = useState(null); // State for selected date
-  const [selectedTime, setSelectedTime] = useState(null); // State for selected time
+// Utility function to get the days of the current month
+const getDaysInMonth = (year, month) => {
+  return new Date(year, month, 0).getDate(); // Get the number of days in a given month
+};
 
-  // Example time slots
-  const timeSlots = ["10:00 am", "11:15 am", "12:30 pm", "1:45 pm", "3:00 pm", "4:15 pm"];
+function ToBookService() {
+  const navigate = useNavigate();
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [availableTimes, setAvailableTimes] = useState([
+    "10:00 am", "11:15 am", "12:30 pm", "1:45 pm", "3:00 pm", "4:15 pm"
+  ]);
 
-  // Generate days dynamically for demonstration (December 2024)
-  const daysInMonth = 31; // Number of days in the current month
+  // Get the current date and time
+  const today = new Date();
+  const currentTime = today.getHours() * 60 + today.getMinutes(); // Current time in minutes
+
+  // Function to get days of the month
+  const daysInMonth = getDaysInMonth(currentYear, currentMonth + 1);
   const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
-  // Handler for selecting a date
-  const handleDateClick = (day) => {
-    setSelectedDate(`December ${day}, 2024`);
-    setSelectedTime(null); // Reset selected time when a new date is chosen
+  // Function to check if a date is in the past
+  const isPastDate = (day) => {
+    return (
+      currentYear < today.getFullYear() ||
+      (currentYear === today.getFullYear() && currentMonth < today.getMonth()) ||
+      (currentYear === today.getFullYear() && currentMonth === today.getMonth() && day < today.getDate())
+    );
   };
 
-  // Handler for selecting a time slot
+  // Function to check if a time slot has passed
+  const isPastTime = (time) => {
+    const [hour, minute] = time.split(":");
+    const [timeHour, timeMinute] = minute.split(" ");
+    let hourIn24 = parseInt(hour);
+    if (timeMinute === "pm" && hourIn24 !== 12) hourIn24 += 12;
+    if (timeMinute === "am" && hourIn24 === 12) hourIn24 = 0;
+    const timeInMinutes = hourIn24 * 60 + parseInt(timeMinute.split(" ")[0]);
+
+    return timeInMinutes < currentTime;
+  };
+
+  // Filter time slots to remove the ones that have passed
+  useEffect(() => {
+    const updatedTimes = availableTimes.filter(time => !isPastTime(time));
+    setAvailableTimes(updatedTimes);
+  }, [availableTimes, currentTime]);
+
+  // Handle selecting a date
+  const handleDateClick = (day) => {
+    if (!isPastDate(day)) {
+      setSelectedDate(`${currentMonth + 1}/${day}/${currentYear}`);
+      setSelectedTime(null); // Reset selected time when a new date is chosen
+    }
+  };
+
+  // Handle selecting a time slot
   const handleTimeClick = (time) => {
     setSelectedTime(time);
   };
 
+  // Handle booking confirmation
+  const handleBookingConfirmation = () => {
+    if (selectedDate && selectedTime) {
+      navigate("/confirm-booking", {
+        state: { selectedDate, selectedTime }, // Pass selected date and time as state
+      });
+    } else {
+      alert("Please select a date and time to book.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 justify-center mt-10">
-      {/* Back Button */}
       <div className="w-full max-w-4xl mb-4">
         <button className="text-blue-600 font-medium hover:underline flex items-center">
           <svg
@@ -43,9 +95,7 @@ function ToBookService({data}) {
         </button>
       </div>
 
-      {/* Content Container */}
       <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg">
-        {/* Header Section */}
         <div className="p-6 border-b border-gray-200">
           <h2 className="text-center text-2xl font-semibold text-gray-800">
             AI Consultancy - 1 hour
@@ -55,9 +105,7 @@ function ToBookService({data}) {
           </p>
         </div>
 
-        {/* Main Content */}
         <div className="flex flex-col md:flex-row bg-blue-100 p-6">
-          {/* Calendar Section */}
           <div className="flex-grow md:pr-6">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="text-lg font-medium text-gray-800">
@@ -68,35 +116,43 @@ function ToBookService({data}) {
               </span>
             </div>
 
-            {/* Calendar */}
             <div className="bg-white rounded-lg shadow-md p-4">
               <div className="flex justify-between items-center mb-4">
-                <button className="text-gray-500 hover:text-blue-600">
-                  &lt; {/* Previous Month */}
+                <button
+                  onClick={() => setCurrentMonth(currentMonth - 1)}
+                  className="text-gray-500 hover:text-blue-600"
+                >
+                  &lt;
                 </button>
                 <span className="text-sm font-medium text-gray-800">
-                  December 2024
+                  {new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} {currentYear}
                 </span>
-                <button className="text-gray-500 hover:text-blue-600">
-                  &gt; {/* Next Month */}
+                <button
+                  onClick={() => setCurrentMonth(currentMonth + 1)}
+                  className="text-gray-500 hover:text-blue-600"
+                >
+                  &gt;
                 </button>
               </div>
+
               <div className="grid grid-cols-7 text-center text-sm">
                 {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
                   <div key={day} className="font-medium text-gray-600">
                     {day}
                   </div>
                 ))}
-                {/* Render Days */}
                 {days.map((day) => (
                   <button
                     key={day}
                     onClick={() => handleDateClick(day)}
                     className={`py-2 px-3 mt-1 rounded-md ${
-                      selectedDate === `December ${day}, 2024`
+                      isPastDate(day)
+                        ? "text-gray-400 cursor-not-allowed bg-gray-100"
+                        : selectedDate === `${currentMonth + 1}/${day}/${currentYear}`
                         ? "bg-blue-600 text-white"
                         : "text-gray-800 hover:bg-blue-200"
                     }`}
+                    disabled={isPastDate(day)}
                   >
                     {day}
                   </button>
@@ -104,14 +160,13 @@ function ToBookService({data}) {
               </div>
             </div>
 
-            {/* Time Slots Section */}
             {selectedDate && (
               <div className="mt-6">
                 <h4 className="text-md font-medium text-gray-800 mb-4">
                   Available Time Slots for {selectedDate}
                 </h4>
                 <div className="grid grid-cols-3 gap-4">
-                  {timeSlots.map((time) => (
+                  {availableTimes.map((time) => (
                     <button
                       key={time}
                       onClick={() => handleTimeClick(time)}
@@ -128,7 +183,6 @@ function ToBookService({data}) {
               </div>
             )}
 
-            {/* Selected Date and Time Info */}
             {selectedDate && selectedTime && (
               <div className="mt-4 text-sm text-gray-800">
                 <p>
@@ -138,33 +192,17 @@ function ToBookService({data}) {
                   Selected Time: <strong>{selectedTime}</strong>
                 </p>
                 <p>
-                  Charge: <strong>2,100</strong>
+                  Charge: <strong>₹2,100</strong>
                 </p>
-                {/* <p>
-                  Charge: <strong>{data.price}</strong>
-                </p> */}
-                <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700">
-                  Confirm Booking for {selectedDate} at {selectedTime}
+                <button
+                  onClick={handleBookingConfirmation}
+                  className="mt-6 w-full bg-blue-600 text-white py-2 rounded-md"
+                >
+                  Confirm Booking
                 </button>
               </div>
             )}
           </div>
-
-          {/* Service Details Section */}
-          {/* <div className="w-full md:w-1/3 bg-blue-200 rounded-lg shadow-md p-4 mt-6 md:mt-0">
-            <h3 className="text-lg font-medium text-gray-800">Service Details</h3>
-            <div className="flex items-center mt-2">
-              <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-sm">
-                Available Online
-              </span>
-            </div>
-            <p className="mt-4 text-gray-800">AI Consultancy - 1 hour</p>
-            <p className="text-gray-600">₹2,100</p>
-            <hr className="border-t border-gray-300 my-4" />
-            <button className="w-full bg-blue-600 text-white py-2 rounded-md font-medium hover:bg-blue-700">
-              Next
-            </button>
-          </div> */}
         </div>
       </div>
     </div>

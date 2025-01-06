@@ -1,44 +1,45 @@
 import React from "react";
-import { FaVideo } from "react-icons/fa"; // Importing a video icon from react-icons
+import { FaVideo } from "react-icons/fa";
 
-const MainCard = ({ image, service, time, price }) => {
+const MainCard = ({ image, service = "AI Consultancy", time = "1 Hour", price = "$200" }) => {
   return (
-    <div className="w-full max-w-md bg-white border border-gray-200 rounded-lg shadow-md mx-auto overflow-hidden">
-      {/* Card Image */}
-      <img
-        src={image}
-        alt={service}
-        className="rounded-t-lg h-72 w-full object-cover"
-      />
-
+    <div
+      className="w-full max-w-[350px] mx-auto bg-white border border-gray-200 rounded-lg shadow-md 
+      hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 overflow-hidden"
+    >
+      {/* Image Section */}
+      <div className="relative">
+        <img
+          src={image}
+          alt={service}
+          className="w-full h-64 object-cover rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-110"
+        />
+        <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+          Online
+        </div>
+      </div>
       {/* Card Content */}
-      <div className="p-6">
-        <h5 className="text-2xl font-bold text-center text-gray-800">
+      <div className="p-6 flex flex-col justify-between">
+        <h5 className="text-2xl font-semibold text-center text-gray-800 mb-4">
           {service}
         </h5>
-
-        {/* Available Online Section with Video Icon */}
         <p className="text-sm text-center text-gray-500 mb-4 flex items-center justify-center">
-          <FaVideo className="mr-2 text-blue-500" /> Available Online
+          <FaVideo className="mr-2 text-blue-600" /> Available Online
         </p>
-
-        <hr className="my-4" />
-
-        {/* Service Details */}
-        <p className="text-center text-lg text-gray-600">{time}</p>
+        <hr className="my-4 border-gray-300" />
+        <p className="text-center text-lg text-gray-700">{time}</p>
         <p className="text-center text-xl font-semibold text-gray-800 mt-2">
           {price}
         </p>
-
-        {/* Read More Link */}
-        <div className="text-center mt-6">
+        <div className="text-center mt-6 space-y-4">
           <a
             href="#"
-            className="text-blue-500 hover:underline text-sm block mb-4"
+            className="text-blue-600 hover:text-blue-700 hover:underline text-sm"
+            aria-label={`Read more about ${service}`}
           >
             Read More
           </a>
-          <button className="w-full px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-md">
+          <button className="w-full px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-all ease-in-out duration-300 cursor-pointer">
             Book Now
           </button>
         </div>
@@ -48,5 +49,8 @@ const MainCard = ({ image, service, time, price }) => {
 };
 
 export default MainCard;
+
+
+
 
 
