@@ -23,15 +23,10 @@ import ContactForm from "./components/ContactForm";
 import Itdevelopment from "./components/Itdevelopment";
 import OurServices from "./components/OurServices";
 
-
 function App() {
   return (
     <Router>
-      {/* <LogIn/> */}
-      {/* <SignUpWithEmail /> */}
-      {/* <SignUp /> */}
       <ScrollToTop /> {/* Scroll reset on route change */}
-      <ScrollToTop /> {/* Scrolls to the top on route change */}
       <div id="root" className="flex flex-col min-h-screen">
         <Navbar /> {/* Navbar appears on all pages */}
         <div className="main-content flex-grow">
@@ -49,41 +44,19 @@ function App() {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/services" element={<Services />} />
             <Route path="/book-a-service" element={<BookAservice />} />
-            <Route path="/ai" element={<Aidescription />} />
-            <Route path="/signup" element={<SignUp />} />    {/* Route for SignUp page */}
-            <Route
-              path="/salesforce-cloud"
-              element={<SalesforceDescription />}
-            />
-            <Route
-              path="/design-thinking"
-              element={<DesignThinkingDescription />}
-            />
-            <Route
-              path="/terms-and-conditions"
-              element={<TermsAndConditions />}
-            />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route
-              path="/cancellation-policy"
-              element={<CancellationPolicy />}
-            />
+            <Route path="/cancellation-policy" element={<CancellationPolicy />} />
             <Route path="/login" element={<LogIn />} />  {/* Default route for LogIn */}
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/signup/email" element={<SignUpWithEmail />}
-             /> 
-             <Route path="/blog" element={<Blog />} /> 
-             <Route path="/ContactForm" element={<ContactForm/>} /> 
-             <Route path="/Aboutprivacy" element={<PrivacyPolicy/>}/> 
-             <Route path="/Aboutterms" element={<TermsAndConditions/>} />
-             <Route path="/Itdevelopment" element={<Itdevelopment/>} />
-             <Route path="/our-service" element={<OurServices />} />
-
-              
-             
-             {/* Route for SignUp
-     
-            {/* <Route path="/signup" element={<SignUpWithEmail />} /> */}
+            <Route path="/signup/email" element={<SignUpWithEmail />} /> 
+            <Route path="/blog" element={<Blog />} /> 
+            <Route path="/contact-form" element={<ContactForm />} /> 
+            <Route path="/aboutprivacy" element={<PrivacyPolicy />} />
+            <Route path="/aboutterms" element={<TermsAndConditions />} />
+            <Route path="/itdevelopment" element={<Itdevelopment />} />
+            <Route path="/our-service" element={<OurServices />} />
+            <Route path="/confirm-booking" element={<ConfirmBooking />} /> {/* ConfirmBooking route */}
+            <Route path="/book-service" element={<ToBookService />} /> {/* ToBookService route */}
           </Routes>
         </div>
         <FooterCom /> {/* Footer appears on all pages */}

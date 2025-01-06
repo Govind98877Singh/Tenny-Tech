@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"; // Import Link for routing
   
   function FooterCom() {
     return (
-      <footer className="bg-[#B2C6E2] py-12 text-black ">
+      <footer className="bg-[#B2C6E2] py-12 text-black mt-6">
         <div className="container mx-auto px-6 lg:px-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
             {/* Contact Section */}
