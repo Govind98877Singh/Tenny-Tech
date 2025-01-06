@@ -3,7 +3,7 @@ import ServiceDigital from "./ServiceDigital";
 import ServiceIT from "./ServiceIT";
 import ServiceSalesforce from "./ServiceSalesforce";
 
-function OurSevices() {
+function OurServices() {
   return (
     <>
       <div>
@@ -16,4 +16,4 @@ function OurSevices() {
   );
 }
 
-export default OurSevices;
+export default OurServices;

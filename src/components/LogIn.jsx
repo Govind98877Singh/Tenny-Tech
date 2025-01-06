@@ -6,15 +6,14 @@ import { Link } from "react-router-dom"; // Import Link from React Router
 
 // Firebase configuration (Replace with your config)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID"
+  apiKey: "AIzaSyCutzagh55LQuyyO3Or4W7GVHI3fJ-KSpM",
+  authDomain: "tenny-tech.firebaseapp.com",
+  projectId: "tenny-tech",
+  storageBucket: "tenny-tech.firebasestorage.app",
+  messagingSenderId: "616591734727",
+  appId: "1:616591734727:web:6fedd3c6f5ed33d1c90be2",
+  measurementId: "G-JC33VBTTWR"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);

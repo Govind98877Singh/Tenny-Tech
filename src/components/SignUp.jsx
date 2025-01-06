@@ -6,15 +6,14 @@ import { Link } from "react-router-dom"; // Import Link from React Router
 
 // Firebase configuration (Replace with your config)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID"
+  apiKey: "AIzaSyCutzagh55LQuyyO3Or4W7GVHI3fJ-KSpM",
+  authDomain: "tenny-tech.firebaseapp.com",
+  projectId: "tenny-tech",
+  storageBucket: "tenny-tech.firebasestorage.app",
+  messagingSenderId: "616591734727",
+  appId: "1:616591734727:web:6fedd3c6f5ed33d1c90be2",
+  measurementId: "G-JC33VBTTWR"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
@@ -65,6 +64,7 @@ const SignUp = () => {
           Continue with Google
         </button>
 
+       
         <div className="flex items-center justify-center my-6">
           <div className="w-1/4 h-px bg-gray-300"></div>
           <p className="mx-2 text-sm text-gray-400">or</p>
@@ -80,13 +80,19 @@ const SignUp = () => {
 
         <p className="mt-6 text-xs text-center text-gray-400">
           By signing up, you agree to our{" "}
-          <a href="#" className="text-blue-600 hover:underline transition duration-300 ease-in-out hover:text-blue-800">
+          <Link
+            to="/terms-and-conditions"
+            className="text-blue-600 hover:underline transition duration-300 ease-in-out hover:text-blue-800"
+          >
             Terms
-          </a>{" "}
+          </Link>{" "}
           and{" "}
-          <a href="#" className="text-blue-600 hover:underline transition duration-300 ease-in-out hover:text-blue-800">
+          <Link
+            to="/privacy-policy"
+            className="text-blue-600 hover:underline transition duration-300 ease-in-out hover:text-blue-800"
+          >
             Privacy Policy
-          </a>
+          </Link>
           .
         </p>
       </div>
@@ -95,7 +101,6 @@ const SignUp = () => {
 };
 
 export default SignUp;
-
 
 
 

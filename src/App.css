@@ -1,5 +1,13 @@
 /* app.css */
 
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 ::-webkit-media-controls-current-time-display {
     display: none !important;
   }

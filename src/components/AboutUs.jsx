@@ -1,3 +1,7 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+
 function AboutUs() {
   return (
     <div>
@@ -9,7 +13,7 @@ function AboutUs() {
             className=" h-[39rem] my-36 ml-[-3rem]"
           />
         </div>
-        <div className="w-[60rem] mt-36 text-xl space-y-6">
+        <div className="w-[60rem] mt-36 text-xl space-y-6 mb-4">
           <p>
             At Teeny Tech Trek, we are passionate about leveraging technology to
             drive innovation and empower businesses in the digital age. Founded
@@ -56,9 +60,17 @@ function AboutUs() {
           </p>
         </div>
       </div>
-      <div className="flex gap-40 absolute bottom-20 left-40">
-        <button className="border px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 text-white">Terms & Conditions</button>
-        <button className="border px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 text-white">Privacy Policy</button>
+      <div className="flex gap-40 absolute bottom-[-8rem] left-16">
+      <Link to="/Aboutterms">
+        <button className="border px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 text-white min-w-44">
+          Terms & Conditions
+        </button>
+      </Link>
+      <Link to="/Aboutprivacy">
+        <button className="border px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 text-white min-w-44">
+          Privacy Policy
+        </button>
+      </Link>
       </div>
     </div>
   );

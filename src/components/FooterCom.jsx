@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"; // Import Link for routing
   
   function FooterCom() {
     return (
-      <footer className="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-800 py-12 text-white">
+      <footer className="bg-[#B2C6E2] py-12 text-black ">
         <div className="container mx-auto px-6 lg:px-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
             {/* Contact Section */}
             <div>
-              <h2 className="text-2xl font-semibold mb-4 text-gray-100">
+              <h2 className="text-2xl font-semibold mb-4 ">
                 Contact
               </h2>
               <ul className="space-y-2 text-sm">
@@ -41,10 +41,10 @@ import { Link } from "react-router-dom"; // Import Link for routing
 
             {/* Location Section */}
             <div>
-              <h2 className="text-2xl font-semibold mb-4 text-gray-100">
+              <h2 className="text-2xl font-semibold mb-4">
                 Location
               </h2>
-              <p className="text-sm leading-relaxed text-gray-300">
+              <p className="text-sm leading-relaxed ">
                 C-201, 2nd floor, Sebiz Square Building, <br />
                 Plot no C-6, Mohali, SAS Nagar - 160062, <br />
                 Punjab, India
@@ -53,7 +53,7 @@ import { Link } from "react-router-dom"; // Import Link for routing
 
             {/* Follow Section */}
             <div>
-              <h2 className="text-2xl font-semibold mb-4 text-gray-100">
+              <h2 className="text-2xl font-semibold mb-4">
                 Follow
               </h2>
               <div className="flex space-x-6">
@@ -96,7 +96,7 @@ import { Link } from "react-router-dom"; // Import Link for routing
            
           {/* Policies Section */}
           <div>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-100">
+            <h2 className="text-2xl font-semibold mb-4 ">
               Quick Links
             </h2>
             <ul className="space-y-2 text-sm">
@@ -129,7 +129,7 @@ import { Link } from "react-router-dom"; // Import Link for routing
         </div>
 
           {/* Footer Bottom Section */}
-          <div className="border-t border-yellow-500 mt-10 pt-6 text-center text-sm text-gray-300">
+          <div className="border-t border-black mt-10 pt-6 text-center text-sm ">
             <p>&copy; 2024 TeenyTechTrek. All Rights Reserved.</p>
           </div>
         </div>

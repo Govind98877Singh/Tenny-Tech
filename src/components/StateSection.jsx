@@ -53,10 +53,10 @@ function StatsSection() {
     >
       {/* Heading Section */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#B2C6E2]">
           Why Choose Us?
         </h2>
-        <p className="text-lg md:text-xl text-gray-600 mt-4">
+        <p className="text-lg md:text-xl text-[#B2C6E2]mt-4">
           Partner with us for cutting-edge solutions tailored for success.
         </p>
       </div>
@@ -74,7 +74,7 @@ function StatsSection() {
             ref={(el) => (statsRef.current[index] = el)}
             className="flex flex-col items-center mb-8"
           >
-            <h3 className="text-6xl font-bold text-blue-600">{stat.number}</h3>
+            <h3 className="text-6xl font-bold  text-[#B2C6E2]">{stat.number}</h3>
             <p className="text-gray-700 mt-2 text-lg">{stat.label}</p>
           </div>
         ))}
