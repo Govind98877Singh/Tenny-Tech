@@ -1,14 +1,36 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import ClientDetails from "./ClientDetails"
 
 function ConfirmBooking() {
   const location = useLocation();
   const { selectedDate, selectedTime } = location.state || {}; // Handle undefined state gracefully
 
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center items-center py-10 mt-20">
-      <div className="w-[80rem] h-[40rem] bg-white rounded-lg shadow-lg p-6 flex items-center justify-center">
-        <div className="w-full md:w-1/3 bg-gray-100 rounded-lg shadow-md p-4">
+    <div className="min-h-screen bg-gray-100 flex justify-center items-center py-10 mt-20 ">
+      <div className="w-[80rem] h-[40rem] bg-white rounded-lg  shadow-lg p-6 flex items-center justify-end">
+        
+        <div>
+          {/* Back Button */}
+            <button className="text-blue-600 font-medium hover:underline flex items-center mb-12 mt-[-8rem]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 mr-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L4.414 10H17a1 1 0 110 2H4.414l3.293 3.293a1 1 0 010 1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Back
+            </button>
+
+           <ClientDetails/>
+        </div>
+        <div className="w-full md:w-1/3 bg-gray-100 rounded-lg shadow-md p-4  absolute bottom-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">
             Booking Details
           </h2>
