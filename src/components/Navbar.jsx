@@ -87,7 +87,7 @@ function Navbar() {
                     </li>
                     <li>
                       <Link
-                        to="/Itdevelopment"
+                        to="/Itdeveloment"
                         className="block px-6 py-2 text-slate-700 hover:bg-[#D5DEF5] transition duration-300 ease-in-out hover:text-blue-500"
                       >
                         IT Development

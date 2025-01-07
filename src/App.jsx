@@ -20,8 +20,8 @@ import SignUpWithEmail from "./components/SignUpWithEmail";
 import LogIn from "./components/Login";
 import Blog from "./components/Blog";
 import ContactForm from "./components/ContactForm";
-import Itdevelopment from "./components/Itdevelopment";
 import OurServices from "./components/OurServices";
+import ITDevelopment from "./components/Itdevelopment";
 
 function App() {
   return (
@@ -53,10 +53,10 @@ function App() {
             <Route path="/contactform" element={<ContactForm />} /> 
             <Route path="/aboutprivacy" element={<PrivacyPolicy />} />
             <Route path="/aboutterms" element={<TermsAndConditions />} />
-            <Route path="/itdevelopment" element={<Itdevelopment />} />
             <Route path="/our-service" element={<OurServices />} />
             <Route path="/confirm-booking" element={<ConfirmBooking />} /> {/* ConfirmBooking route */}
             <Route path="/book-service" element={<ToBookService />} /> {/* ToBookService route */}
+            <Route path="Itdeveloment" element ={<ITDevelopment/>}/>
           </Routes>
         </div>
         <FooterCom /> {/* Footer appears on all pages */}
