@@ -50,7 +50,7 @@ function App() {
             <Route path="/login" element={<LogIn />} />  {/* Default route for LogIn */}
             <Route path="/signup/email" element={<SignUpWithEmail />} /> 
             <Route path="/blog" element={<Blog />} /> 
-            <Route path="/contact-form" element={<ContactForm />} /> 
+            <Route path="/contactform" element={<ContactForm />} /> 
             <Route path="/aboutprivacy" element={<PrivacyPolicy />} />
             <Route path="/aboutterms" element={<TermsAndConditions />} />
             <Route path="/itdevelopment" element={<Itdevelopment />} />
