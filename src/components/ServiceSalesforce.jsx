@@ -13,21 +13,11 @@ function ServiceSalesforce() {
       {/* Text Section */}
       <div className="md:w-1/2 px-6 mt-20">
         <h1 className="text-7xl font-bold text-blue-600 mb-4">
-          AI Consultancy
+        Salesforce
         </h1>
         <p className="text-gray-700 text-justify leading-relaxed mb-6 mt-16">
-          Teeny Tech Trek offers comprehensive AI consultancy services designed
-          to help businesses harness the power of artificial intelligence for
-          enhanced operational efficiency and strategic growth. Our consultancy
-          encompasses a range of solutions, including the integration of AI
-          technologies tailored to specific business needs, data analytics to
-          derive actionable insights, and the development of custom AI models.
-          <br />
-          <br />
-          By leveraging industry expertise and cutting-edge tools, we empower
-          our clients to navigate the complexities of AI implementation,
-          ensuring they remain competitive in an increasingly data-driven
-          marketplace.
+        Teeny Tech Trek specializes in Salesforce cloud development, enabling organizations to optimize their customer relationship management through intelligent automation and streamlined processes.Salesforce Product Consulting Services designed to bridge the gap between businesses and their customers through robust automation, AI-driven analytics, and advanced CRM tools. We provide tailored solutions : development, integration, implementation, optimization, ensuring that organizations maximize the value.
+      
         </p>
         <a
           href="#"

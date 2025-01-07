@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Blog() {
   // Retrieve the like count from localStorage, defaulting to 0 if not found
@@ -40,7 +41,7 @@ function Blog() {
         {/* Post Details Section */}
         <div className="bg-[#3a6ea5] text-white p-6 flex flex-col justify-center items-center h-56 rounded-b-lg shadow-lg">
           {/* Top Row */}
-          <div className="flex justify-between items-center mb-4 mt-[-2rem] w-full">
+          <div className="flex justify-center items-center mb-4 mt-[-2rem] w-full">
             <p className="text-sm">
               <span>6 days ago</span> • <span>0 min read</span>
             </p>
@@ -48,9 +49,11 @@ function Blog() {
 
           {/* Title */}
           <h2 className="text-3xl font-bold max-w-[80%] text-center">
-            <a href="#" className="hover:underline text-white">
+            <Link
+             to={"/Highlight-Blog"}
+             className="hover:underline text-white">
               Highlights of AI in 2024!
-            </a>
+            </Link>
           </h2>
         </div>
 

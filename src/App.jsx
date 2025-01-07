@@ -59,7 +59,7 @@ function App() {
             <Route path="/itdevelopment" element={<Itdevelopment />} />
             <Route path="/our-service" element={<OurServices />} />
             <Route path="/confirm-booking" element={<ConfirmBooking />} /> {/* ConfirmBooking route */}
-            <Route path="/book-service" element={<ToBookService />} /> {/* ToBookService route */}
+            <Route path="/to-book-service" element={<ToBookService />} /> {/* ToBookService route */}
           </Routes>
         </div>
         <FooterCom /> {/* Footer appears on all pages */}
