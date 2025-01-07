@@ -2,9 +2,9 @@ import React from "react";
 
 const DesignThinkingDescription = () => {
   return (
-    <div className="container mx-auto p-6 flex flex-col items-center min-h-screen space-y-12">
+    <div className="container mx-auto p-6 flex flex-col items-center min-h-screen space-y-12 mt-20">
       {/* Card 1: User Research */}
-      <div className="bg-blue-100 rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+      <div className="bg-[#B2C6E2] rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
         <div className="md:w-1/2">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             User Research
@@ -41,7 +41,7 @@ const DesignThinkingDescription = () => {
       </div>
 
 {/* Card 2: Empathy Mapping */}
-<div className="bg-blue-100 rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row-reverse items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+<div className="bg-[#B2C6E2] rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row-reverse items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
   <div className="md:w-1/2 px-6"> {/* Added padding to give space between text and image */}
     <h2 className="text-3xl font-bold text-gray-800 mb-4">
       Empathy Mapping
@@ -72,7 +72,7 @@ const DesignThinkingDescription = () => {
 
 
       {/* Card 3: Ideation Sessions */}
-      <div className="bg-blue-100 rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+      <div className="bg-[#B2C6E2] rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
         <div className="md:w-1/2">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Ideation Sessions
@@ -108,7 +108,7 @@ const DesignThinkingDescription = () => {
       </div>
 
       {/* Card 4: Journey Mapping */}
-      <div className="bg-blue-100 rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+      <div className="bg-[#B2C6E2] rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
         <div className="md:w-1/2 flex justify-center">
           <div className="bg-white rounded-lg p-4 shadow-md w-[600px] h-[450px]">
             <img
@@ -144,7 +144,7 @@ const DesignThinkingDescription = () => {
       </div>
 
       {/* Card 5: Prototyping */}
-      <div className="bg-blue-100 rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+      <div className="bg-[#B2C6E2] rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
         <div className="md:w-1/2">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Prototyping</h2>
           <p className="text-gray-700 mb-4">
@@ -178,7 +178,7 @@ const DesignThinkingDescription = () => {
       </div>
 
       {/* Card 6: Innovation Frameworks */}
-      <div className="bg-blue-100 rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+      <div className="bg-[#B2C6E2] rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
         <div className="md:w-1/2 flex justify-center">
           <div className="bg-white rounded-lg p-4 shadow-md w-[600px] h-[450px]">
             <img
@@ -213,7 +213,7 @@ const DesignThinkingDescription = () => {
       </div>
 
       {/* Card 7: Implementation Support */}
-      <div className="bg-blue-100 rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+      <div className="bg-[#B2C6E2] rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
         <div className="md:w-1/2">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Implementation Support
@@ -247,8 +247,8 @@ const DesignThinkingDescription = () => {
           </div>
         </div>
       </div>
-      {/* Card 9: User Testing */}
-<div className="bg-blue-100 rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+      {/* Card 8: User Testing */}
+<div className="bg-[#B2C6E2] rounded-lg p-10 w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
   <div className="md:w-1/2 flex justify-center">
     <div className="bg-white rounded-lg p-4 shadow-md w-[600px] h-[450px]">
       <img

@@ -62,12 +62,12 @@ function AboutUs() {
       </div>
       <div className="flex gap-40 absolute bottom-[-8rem] left-16">
       <Link to="/Aboutterms">
-        <button className="border px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 text-white min-w-44">
+        <button className="border px-8 py-5 rounded-2xl bg-[#3E6AA7] text-white min-w-44">
           Terms & Conditions
         </button>
       </Link>
       <Link to="/Aboutprivacy">
-        <button className="border px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 text-white min-w-44">
+        <button className="border px-8 py-5 rounded-2xl bg-[#3E6AA7] text-white min-w-44">
           Privacy Policy
         </button>
       </Link>

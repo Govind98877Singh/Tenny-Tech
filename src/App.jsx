@@ -19,6 +19,7 @@ import CancellationPolicy from "./components/CancellationPolicy";
 import SignUpWithEmail from "./components/SignUpWithEmail";
 import LogIn from "./components/Login";
 import Blog from "./components/Blog";
+import HighlightBlog from "./components/HighlightBlog";
 import ContactForm from "./components/ContactForm";
 import Itdevelopment from "./components/Itdevelopment";
 import OurServices from "./components/OurServices";
@@ -50,7 +51,9 @@ function App() {
             <Route path="/login" element={<LogIn />} />  {/* Default route for LogIn */}
             <Route path="/signup/email" element={<SignUpWithEmail />} /> 
             <Route path="/blog" element={<Blog />} /> 
+            <Route path="/Highlight-Blog" element={<HighlightBlog />} /> 
             <Route path="/ContactForm" element={<ContactForm />} /> 
+            <Route path="/contactform" element={<ContactForm />} /> 
             <Route path="/aboutprivacy" element={<PrivacyPolicy />} />
             <Route path="/aboutterms" element={<TermsAndConditions />} />
             <Route path="/itdevelopment" element={<Itdevelopment />} />
