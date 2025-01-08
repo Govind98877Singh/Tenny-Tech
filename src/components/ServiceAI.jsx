@@ -1,3 +1,6 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 function ServiceAI() {
   return (
     <div className="flex flex-col md:flex-row bg-blue-100 p-8 ">
@@ -29,13 +32,13 @@ function ServiceAI() {
           ensuring they remain competitive in an increasingly data-driven
           marketplace.
         </p>
-        <a
-          href="#"
-          className="text-blue-500 text-2xl font-semibold hover:underline flex items-center mt-16"
-        >
-          <span className="mr-2">Learn More</span>
-          <span>➤</span>
-        </a>
+        <Link
+        to="/learn-moreAi"
+        className="text-blue-500 text-2xl font-semibold hover:underline flex items-center mt-16"
+      >
+        <span className="mr-2">Learn More</span>
+        <span>➤</span>
+      </Link>
       </div>
     </div>
   );

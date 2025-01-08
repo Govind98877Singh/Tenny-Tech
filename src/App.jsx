@@ -23,6 +23,7 @@ import HighlightBlog from "./components/HighlightBlog";
 import ContactForm from "./components/ContactForm";
 import OurServices from "./components/OurServices";
 import ITDevelopment from "./components/Itdevelopment";
+import ServiceAI from "./components/ServiceAI";
 
 function App() {
   return (
@@ -58,7 +59,15 @@ function App() {
             <Route path="/aboutterms" element={<TermsAndConditions />} />
             <Route path="/our-service" element={<OurServices />} />
             <Route path="/confirm-booking" element={<ConfirmBooking />} /> {/* ConfirmBooking route */}
-            <Route path="/to-book-service" element={<ToBookService />} /> {/* ToBookService route */}
+            <Route path="/to-book-service" element={<ToBookService />} />
+            <Route path="/learn-moreAi" element={<Aidescription/>} /> 
+            <Route path="/learn-more-Design" element={<DesignThinkingDescription/>} /> 
+            <Route path="/learn-more-service" element={<SalesforceDescription/>} /> 
+            <Route path="/learn-more-it" element={<ITDevelopment/>} />
+            <Route path="/Itdeveloment" element={<ITDevelopment/>} /> 
+            <Route path="/meeting" element={<BookAservice/>} />
+
+            
           </Routes>
         </div>
         <FooterCom /> {/* Footer appears on all pages */}

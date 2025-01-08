@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 function ServiceIT() {
   return (
     <div className="flex flex-col md:flex-row bg-blue-100 p-8 ">
@@ -18,13 +20,13 @@ function ServiceIT() {
         <p className="text-gray-700 text-justify leading-relaxed mb-6 mt-16">
         Teeny Tech Trek offers a robust suite of web development and digital marketing services tailored to meet the needs of modern businesses. Our web development team specializes in creating responsive, user-friendly websites and applications that leverage the latest technologies to ensure optimal performance and seamless user experiences. Additionally, we provide digital marketing services that encompass search engine optimization (SEO), social media marketing, and content creation, all aimed at enhancing online visibility and engagement. By integrating these services, they help businesses not only establish a strong online presence but also effectively reach and connect with their target audiences, driving growth and fostering brand loyalty in an increasingly competitive digital landscape.
         </p>
-        <a
-          href="#"
-          className="text-blue-500 text-2xl font-semibold hover:underline flex items-center mt-16"
-        >
-          <span className="mr-2">Learn More</span>
-          <span>➤</span>
-        </a>
+        <Link
+        to="/learn-more-it"
+        className="text-blue-500 text-2xl font-semibold hover:underline flex items-center mt-16"
+      >
+        <span className="mr-2">Learn More</span>
+        <span>➤</span>
+      </Link>
       </div>
     </div>
   );

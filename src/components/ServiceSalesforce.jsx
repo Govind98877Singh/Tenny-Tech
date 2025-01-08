@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 function ServiceSalesforce() {
   return (
     <div className="flex flex-col md:flex-row bg-blue-100 p-8 ">
@@ -19,13 +21,13 @@ function ServiceSalesforce() {
         Teeny Tech Trek specializes in Salesforce cloud development, enabling organizations to optimize their customer relationship management through intelligent automation and streamlined processes.Salesforce Product Consulting Services designed to bridge the gap between businesses and their customers through robust automation, AI-driven analytics, and advanced CRM tools. We provide tailored solutions : development, integration, implementation, optimization, ensuring that organizations maximize the value.
       
         </p>
-        <a
-          href="#"
-          className="text-blue-500 text-2xl font-semibold hover:underline flex items-center mt-16"
-        >
-          <span className="mr-2">Learn More</span>
-          <span>➤</span>
-        </a>
+        <Link
+        to="/learn-more-service"
+        className="text-blue-500 text-2xl font-semibold hover:underline flex items-center mt-16"
+      >
+        <span className="mr-2">Learn More</span>
+        <span>➤</span>
+      </Link>
       </div>
     </div>
   );
