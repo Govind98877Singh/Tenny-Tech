@@ -24,6 +24,9 @@ import ContactForm from "./components/ContactForm";
 import OurServices from "./components/OurServices";
 import ITDevelopment from "./components/Itdevelopment";
 import ServiceAI from "./components/ServiceAI";
+import LoginWithEmail from "./components/LoginWithEmail";
+import ForgotPassword from "./components/ForgotPassword";  // Correctly import the ForgotPassword component
+
 
 function App() {
   return (
@@ -66,6 +69,9 @@ function App() {
             <Route path="/learn-more-it" element={<ITDevelopment/>} />
             <Route path="/Itdeveloment" element={<ITDevelopment/>} /> 
             <Route path="/meeting" element={<BookAservice/>} />
+            <Route path="/Login-email" element={<LoginWithEmail/>} />
+            
+            <Route path="/forgot-password" element={<ForgotPassword />} /> Add this route
 
             
           </Routes>
