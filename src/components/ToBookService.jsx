@@ -100,13 +100,23 @@ function ToBookService() {
   };
 
   const handleBookingConfirmation = () => {
-    if (selectedDate && selectedTime) {
-      alert(`Booking confirmed for ${serviceData.service} on ${selectedDate} at ${selectedTime}.`);
-      navigate("/confirm-booking", { state: { selectedDate, selectedTime } });
-    } else {
+    if (!selectedDate || !selectedTime) {
       alert("Please select a date and time to book.");
+      return;
     }
+  
+    alert(`Booking confirmed for ${serviceData.service} on ${selectedDate} at ${selectedTime}.`);
+    navigate("/confirm-booking", {
+      state: {
+        selectedDate,
+        selectedTime,
+        serviceName: serviceData.service,
+        serviceTime: serviceData.time,
+        servicePrice: serviceData.price,
+      },
+    });
   };
+  
 
   const monthGrid = getMonthGrid(currentYear, currentMonth); // Get the complete grid for the month
 
