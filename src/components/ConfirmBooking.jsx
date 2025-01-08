@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import ClientDetails from "./ClientDetails"
+
 function ConfirmBooking() {
   const location = useLocation();
   const { selectedDate, selectedTime, serviceName , serviceTime , servicePrice  } = location.state || {};
@@ -29,7 +30,9 @@ function ConfirmBooking() {
             Back
           </button>
 
-          <ClientDetails />
+          <ClientDetails 
+           
+            />
         </div>
         <div className="w-full md:w-1/3 bg-gray-100 rounded-lg shadow-md p-4 absolute bottom-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">
