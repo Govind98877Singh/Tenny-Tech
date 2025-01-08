@@ -13,21 +13,10 @@ function ServiceIT() {
       {/* Text Section */}
       <div className="md:w-1/2 px-6 mt-20">
         <h1 className="text-7xl font-bold text-blue-600 mb-4">
-          AI Consultancy
+        IT Solutions
         </h1>
         <p className="text-gray-700 text-justify leading-relaxed mb-6 mt-16">
-          Teeny Tech Trek offers comprehensive AI consultancy services designed
-          to help businesses harness the power of artificial intelligence for
-          enhanced operational efficiency and strategic growth. Our consultancy
-          encompasses a range of solutions, including the integration of AI
-          technologies tailored to specific business needs, data analytics to
-          derive actionable insights, and the development of custom AI models.
-          <br />
-          <br />
-          By leveraging industry expertise and cutting-edge tools, we empower
-          our clients to navigate the complexities of AI implementation,
-          ensuring they remain competitive in an increasingly data-driven
-          marketplace.
+        Teeny Tech Trek offers a robust suite of web development and digital marketing services tailored to meet the needs of modern businesses. Our web development team specializes in creating responsive, user-friendly websites and applications that leverage the latest technologies to ensure optimal performance and seamless user experiences. Additionally, we provide digital marketing services that encompass search engine optimization (SEO), social media marketing, and content creation, all aimed at enhancing online visibility and engagement. By integrating these services, they help businesses not only establish a strong online presence but also effectively reach and connect with their target audiences, driving growth and fostering brand loyalty in an increasingly competitive digital landscape.
         </p>
         <a
           href="#"

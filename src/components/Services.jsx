@@ -4,8 +4,8 @@ function Services({ data }) {
   const navigate = useNavigate(); // Get navigate function
 
   const handleBookNowClick = () => {
-    // Navigate to the ToBookService page with data as state
-    navigate('/book-service', { state: { data } });
+    // Navigate to the ToBookService page with the selected service data
+    navigate('/to-book-service', { state: { data } });
   };
 
   return (
@@ -23,17 +23,22 @@ function Services({ data }) {
         {/* Service Details */}
         <div className="w-full md:w-1/2 bg-[#3D6CB9] text-white shadow-md p-6 flex flex-col justify-between rounded-b-2xl md:rounded-r-2xl md:rounded-b-none ml-[-1px] items-center pt-10">
           <h3 className="text-2xl font-semibold mb-2">{data.service}</h3>
+          
           {/* Conditionally render "Available Online" */}
           {data.service !== "AI Consultancy - In Person" && (
             <span className="bg-white text-[#3D6CB9] px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
               Available Online
             </span>
           )}
+
           <hr className="border-t border-white w-full mb-4" />
+
           <p className="text-lg font-medium mb-4">
             <span className="block">{data.time}</span>
             <span className="block">{data.price}</span>
           </p>
+
+          {/* Book Now Button */}
           <button
             onClick={handleBookNowClick}
             className="bg-white text-[#3D6CB9] px-4 py-2 rounded-lg font-medium shadow-md hover:bg-[#D5DEF5] hover:text-blue-600 transition duration-300"

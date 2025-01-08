@@ -13,21 +13,10 @@ function ServiceDigital() {
       {/* Text Section */}
       <div className="md:w-1/2 px-6 mt-20">
         <h1 className="text-7xl font-bold text-blue-600 mb-4">
-          AI Consultancy
+        Design Thinking
         </h1>
         <p className="text-gray-700 text-justify leading-relaxed mb-6 mt-16">
-          Teeny Tech Trek offers comprehensive AI consultancy services designed
-          to help businesses harness the power of artificial intelligence for
-          enhanced operational efficiency and strategic growth. Our consultancy
-          encompasses a range of solutions, including the integration of AI
-          technologies tailored to specific business needs, data analytics to
-          derive actionable insights, and the development of custom AI models.
-          <br />
-          <br />
-          By leveraging industry expertise and cutting-edge tools, we empower
-          our clients to navigate the complexities of AI implementation,
-          ensuring they remain competitive in an increasingly data-driven
-          marketplace.
+        Teeny Tech Trek provides specialized design thinking consultancy services aimed at fostering innovation and enhancing problem-solving capabilities for businesses. By employing a user-centered approach, the consultancy guides organizations through structured workshops and tailored consulting sessions that focus on understanding user needs and rearticulating challenges. Our methodology emphasizes collaboration, encouraging cross-functional teams to generate fresh ideas and develop rapid prototypes that undergo iterative feedback cycles. We empower our clients to transform their ideas into practical applications, ensuring that their products and services resonate with users and adapt effectively to market demands.
         </p>
         <a
           href="#"

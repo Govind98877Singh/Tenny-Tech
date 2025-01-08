@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Blog() {
+  // Retrieve the like count from localStorage, defaulting to 0 if not found
+  const storedLikes = parseInt(localStorage.getItem("likes"), 10) || 0;
+
+  // State to track if the heart is clicked and like count
+  const [isLiked, setIsLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(storedLikes);
+
+  // Toggle like state when heart is clicked
+  const handleLikeClick = () => {
+    setIsLiked(!isLiked);
+    const newLikeCount = isLiked ? likeCount - 1 : likeCount + 1;
+    setLikeCount(newLikeCount);
+    localStorage.setItem("likes", newLikeCount); // Update the like count in localStorage
+  };
+
+  useEffect(() => {
+    // Update localStorage with the latest like count whenever it changes
+    localStorage.setItem("likes", likeCount);
+  }, [likeCount]);
+
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#B2C6E2] mx-20  mt-40 mb-20">
-      <div className="max-w-[55rem]  w-full border overflow-hidden my-10 border-8 border-[#89c2d9]">
+    <div className="flex justify-center items-center min-h-screen bg-[#B2C6E2] mx-20 mt-40 mb-20">
+      <div className="max-w-[55rem] w-full border overflow-hidden my-10 border-8 border-[#89c2d9]">
         {/* Video Section */}
-        <div className="relative h- bg-black">
-          <video
-            className="w-full h-full object-cover"
-            controls
-            autoPlay 
-            muted
-          >
+        <div className="relative h-[60vh] bg-black">
+          <video className="w-full h-full object-cover" controls autoPlay muted>
             <source
               src="https://www.w3schools.com/html/mov_bbb.mp4"
               type="video/mp4"
@@ -21,42 +39,40 @@ function Blog() {
         </div>
 
         {/* Post Details Section */}
-        <div className="bg-[#3a6ea5] text-white p-4 flex  flex-col justify-center items-center h-56">
+        <div className="bg-[#3a6ea5] text-white p-6 flex flex-col justify-center items-center h-56 rounded-b-lg shadow-lg">
           {/* Top Row */}
-          <div className="flex justify-between items-center mb-4 mt-[-5rem]">
+          <div className="flex justify-center items-center mb-4 mt-[-2rem] w-full">
             <p className="text-sm">
               <span>6 days ago</span> • <span>0 min read</span>
             </p>
-            
           </div>
 
           {/* Title */}
-          <h2 className="text-3xl font-bold">
-            <a
-              href="#"
-              className="hover:underline text-white"
-            >
+          <h2 className="text-3xl font-bold max-w-[80%] text-center">
+            <Link
+             to={"/Highlight-Blog"}
+             className="hover:underline text-white">
               Highlights of AI in 2024!
-            </a>
+            </Link>
           </h2>
         </div>
 
         {/* Footer Section */}
-        <div className="bg-[#3a6ea5] border-t border-white  text-white p-4 flex justify-between items-center ">
-          <div className="flex space-x-4 ">
-            <span className="text-sm">5 views</span>
+        <div className="bg-[#3a6ea5] border-t border-white text-white p-4 flex justify-between items-center">
+          <div className="flex space-x-6">
+            <span className="text-sm">{likeCount} views</span>
             <span className="text-sm">0 comments</span>
           </div>
-          <button className="text-red-500">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              className="w-5 h-5"
-            >
-              <path d="M12 4.248c-3.148-5.402-12-3.735-12 2.944 0 4.418 5.581 7.934 12 13.808 6.418-5.874 12-9.39 12-13.808 0-6.679-8.852-8.346-12-2.944z" />
-            </svg>
-          </button>
+
+          {/* Like Button */}
+          <div onClick={handleLikeClick} className="flex items-center cursor-pointer">
+            {isLiked ? (
+              <FaHeart className="text-3xl text-red-500" />
+            ) : (
+              <CiHeart className="text-3xl text-red-500" />
+            )}
+            <span className="ml-2 text-xl">{likeCount}</span> {/* Display like count */}
+          </div>
         </div>
       </div>
     </div>
