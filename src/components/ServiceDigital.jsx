@@ -6,7 +6,7 @@ function ServiceDigital() {
       {/* Image Section */}
       <div className="md:w-1/2 flex justify-center mb-6 md:mb-0">
         <img
-          src="Images/Design Thinking 1.webp"
+          src="Images/DesignThinking1.webp"
           alt="AI Consultancy"
           className="w-[50rem] h-[35rem]  rounded-lg shadow-lg  "
         />

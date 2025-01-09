@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import { FaVideo } from "react-icons/fa";
+
 
 function Services({ data }) {
   const navigate = useNavigate(); // Get navigate function
@@ -26,8 +28,8 @@ function Services({ data }) {
           
           {/* Conditionally render "Available Online" */}
           {data.service !== "AI Consultancy - In Person" && (
-            <span className="bg-white text-[#3D6CB9] px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
-              Available Online
+            <span className="bg-white flex text-[#3D6CB9] px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
+               <FaVideo className=" mr-2 mt-1 text-blue-600" />Available Online
             </span>
           )}
 

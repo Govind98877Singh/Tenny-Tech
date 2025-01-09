@@ -31,7 +31,7 @@ function Blog() {
         <div className="relative h-[60vh] bg-black">
           <video className="w-full h-full object-cover" controls autoPlay muted>
             <source
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              src="Images/AI-images/AdobeStock_1067591113_Video_HD_Preview_2.mov"
               type="video/mp4"
             />
             Your browser does not support the video tag.
