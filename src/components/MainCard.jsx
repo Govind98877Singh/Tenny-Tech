@@ -1,5 +1,6 @@
 import React from "react";
 import { FaVideo } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const MainCard = ({
   image,
@@ -11,7 +12,7 @@ const MainCard = ({
     <div
       className="w-full max-w-[350px] mx-auto bg-white border border-gray-200 rounded-lg shadow-md 
       hover:shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105 
-      overflow-hidden flex flex-col min-h-[500px]" // Enforcing consistent height
+      overflow-hidden flex flex-col min-h-[500px]"
     >
       {/* Image Section */}
       <div className="relative">
@@ -28,9 +29,7 @@ const MainCard = ({
       {/* Card Content */}
       <div className="p-6 flex flex-col justify-between flex-1">
         <div className="flex flex-col items-center space-y-2">
-          <h5
-            className="text-xl md:text-2xl font-semibold text-center text-gray-800 min-h-[50px]" // Fixed height for heading
-          >
+          <h5 className="text-xl md:text-2xl font-semibold text-center text-gray-800 min-h-[50px]">
             {service}
           </h5>
           <p className="text-sm text-center text-gray-500 flex items-center justify-center">
@@ -56,12 +55,18 @@ const MainCard = ({
           >
             Read More
           </a>
-          <button
-            className="w-full px-6 py-3 text-white bg-[#3E6AA7] rounded-md 
-            transition-all ease-in-out duration-300 cursor-pointer"
+          {/* Pass service data as state to ToBookService */}
+          <Link
+            to="/to-book-a-service"
+            state={{ data: { service, time, price } }}  
           >
-            Book Now
-          </button>
+            <button
+              className="w-full px-6 py-3 text-white bg-[#3E6AA7] rounded-md 
+              transition-all ease-in-out duration-300 cursor-pointer"
+            >
+              Book Now
+            </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -69,9 +74,3 @@ const MainCard = ({
 };
 
 export default MainCard;
-
-
-
-
-
-

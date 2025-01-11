@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const getFirstDayOfMonth = (year, month) => {
@@ -25,8 +25,9 @@ const getMonthGrid = (year, month) => {
 function ToBookService() {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const serviceData = state?.data; // Extract passed data from state
+  const serviceData = state?.data;  // Extract passed data from state
 
+  // Handle case where service data is not passed
   if (!serviceData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -104,7 +105,7 @@ function ToBookService() {
       alert("Please select a date and time to book.");
       return;
     }
-  
+
     alert(`Booking confirmed for ${serviceData.service} on ${selectedDate} at ${selectedTime}.`);
     navigate("/confirm-booking", {
       state: {
@@ -116,7 +117,6 @@ function ToBookService() {
       },
     });
   };
-  
 
   const monthGrid = getMonthGrid(currentYear, currentMonth); // Get the complete grid for the month
 
@@ -178,7 +178,7 @@ function ToBookService() {
                   <button
                     key={index}
                     onClick={() => handleDateClick(day)}
-                    className={`py-2 px-3 mt-1 rounded-md ${ 
+                    className={`py-2 px-3 mt-1 rounded-md ${
                       isPastDate(day) || isWeekend(day)
                         ? "text-gray-400 cursor-not-allowed bg-gray-100"
                         : selectedDate === `${currentMonth + 1}/${day}/${currentYear}`
@@ -199,14 +199,18 @@ function ToBookService() {
                   Available Time Slots for {selectedDate}
                 </h4>
                 <div className="grid grid-cols-3 gap-4">
-                  {availableTimes.map((time) => (
+                  {availableTimes.map((time, index) => (
                     <button
-                      key={time}
+                      key={index}
                       onClick={() => handleTimeClick(time)}
-                      className={`py-2 px-3 rounded-md ${selectedTime === time
-                        ? "bg-blue-600 text-white"
-                        : "text-gray-800 hover:bg-blue-200"
-                      }`}
+                      className={`${
+                        time < currentTime
+                          ? "text-gray-400 cursor-not-allowed"
+                          : selectedTime === time
+                          ? "bg-blue-600 text-white"
+                          : "text-gray-800 hover:bg-blue-200"
+                      } py-2 px-4 rounded-md`}
+                      disabled={time < currentTime}
                     >
                       {time}
                     </button>
@@ -214,29 +218,18 @@ function ToBookService() {
                 </div>
               </div>
             )}
+          </div>
 
-            {selectedDate && selectedTime && (
-              <div className="mt-4 text-sm text-gray-800">
-                <p>
-                  Selected Date: <strong>{selectedDate}</strong>
-                </p>
-                <p>
-                  Selected Time: <strong>{selectedTime}</strong>
-                </p>
-                <p>
-                  Price: <strong>{serviceData.price}</strong>
-                </p>
-              </div>
-            )}
-
-            <div className="flex justify-start mt-6">
-              <button
-                onClick={handleBookingConfirmation}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
-              >
-                Confirm Booking
-              </button>
-            </div>
+          <div className="mt-6 md:mt-0 md:w-1/3 bg-gray-200 p-6 rounded-lg">
+            <h3 className="text-lg font-medium text-gray-800 mb-4">
+              Confirm Your Booking
+            </h3>
+            <button
+              onClick={handleBookingConfirmation}
+              className="w-full py-3 text-white bg-[#3E6AA7] rounded-md"
+            >
+              Confirm Booking
+            </button>
           </div>
         </div>
       </div>
