@@ -21,9 +21,11 @@ const MainCard = ({
           alt={`${service} image`}
           className="w-full h-56 object-cover rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-110"
         />
-        <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
-          Online
-        </div>
+        {service !== "AI Consultancy - In Person" && (
+          <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+            Online
+          </div>
+        )}
       </div>
 
       {/* Card Content */}
@@ -32,9 +34,11 @@ const MainCard = ({
           <h5 className="text-xl md:text-2xl font-semibold text-center text-gray-800 min-h-[50px]">
             {service}
           </h5>
-          <p className="text-sm text-center text-gray-500 flex items-center justify-center">
-            <FaVideo className="mr-2 text-blue-600" /> Available Online
-          </p>
+          {service !== "AI Consultancy - In Person" && (
+            <p className="text-sm text-center text-gray-500 flex items-center justify-center">
+              <FaVideo className="mr-2 text-blue-600" /> Available Online
+            </p>
+          )}
         </div>
 
         <hr className="my-4 border-gray-300" />

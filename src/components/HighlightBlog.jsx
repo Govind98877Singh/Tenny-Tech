@@ -54,14 +54,16 @@ function HighlightBlog() {
         </h1>
 
         {/* Blog Image */}
-        <img
-          src="https://via.placeholder.com/800x400"
-          alt="Highlights of AI"
-          className="w-full rounded-lg mb-4"
-        />
+        <video className="w-full h-full object-cover" controls autoPlay muted>
+            <source
+              src="Images\AI-images\AdobeStock_924701473_Video_HD_Preview.mov"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
 
         {/* Blog Actions */}
-        <div className="flex justify-between items-center text-xl mb-4">
+        <div className="flex justify-between items-center text-xl mb-4 mt-4">
           <div className="flex gap-4 text-blue-600">
             <a href="https://www.facebook.com">
               <button className="hover:text-blue-800">
