@@ -1,24 +1,9 @@
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
+import React from "react";
 
 const Aidescription = () => {
-  const headerRef = useRef(null);
-
-  useEffect(() => {
-    const tl = gsap.timeline();
-    tl.from(headerRef.current.querySelectorAll(".text-line"), {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power4.out",
-    });
-  }, []);
-
   return (
     <div>
       <header
-        ref={headerRef}
         className="container mx-auto flex flex-col items-center justify-center py-20 text-center text-4xl font-bold text-gray-800"
       >
         <h1 className="text-line">
@@ -33,7 +18,7 @@ const Aidescription = () => {
 
       <div className="flex justify-center mt-10">
         <img
-          src="https://static.wixstatic.com/media/c837a6_4aab6aa50b194e4fb8f23f9cb0e52bb3~mv2.png/v1/fill/w_1000,h_648,al_c,q_90,enc_avif,quality_auto/Rectangle%2059.png"
+          src="Images\AI-images\AdobeStock_926916762_Preview.jpeg"
           alt="Description of Image"
           className="w-full max-w-md h-auto rounded-lg"
         />
